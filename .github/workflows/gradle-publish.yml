@@ -110,3 +110,10 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             sh /home/application/websocket/bin/websocket.sh restart
+
+
+
+
+
+
+
