@@ -42,18 +42,18 @@ echo "[JAVA_HOME] $JAVA_HOME"
 # profiles 셋팅
 ##################################################
 
-if [ "$HOSTNAME" = "ip-172-31-63-34.ap-northeast-2.compute.internal" ]
+if [ "$HOSTNAME" = "gcloud-seoul-3fe4e041db20eecbe3fedc2b61669dbe" ]
 then
-	PROFILE="-Dspring.profiles.active=dev -Djava.net.preferIPv4Stack=true -Dlog4j2.formatMsgNoLookups=true"
+	PROFILE="-Dspring.profiles.active=prd -Djava.net.preferIPv4Stack=true -Dlog4j2.formatMsgNoLookups=true -Xms8g -Xmx16g"
 elif [[ "$HOSTNAME" = "host-stg" ]]
 then
-	PROFILE="-Dspring.profiles.active=stg -Djava.net.preferIPv4Stack=true -Dlog4j2.formatMsgNoLookups=true"
-elif [[ "$HOSTNAME" = "host-prd"  ]]
+	PROFILE="-Dspring.profiles.active=stg -Djava.net.preferIPv4Stack=true -Dlog4j2.formatMsgNoLookups=true -Xms2g -Xmx4g"
+elif [[ "$HOSTNAME" = "host-dev"  ]]
 then
-	PROFILE="-Dspring.profiles.active=prd -Djava.net.preferIPv4Stack=true -Dlog4j2.formatMsgNoLookups=true"
+	PROFILE="-Dspring.profiles.active=dev -Djava.net.preferIPv4Stack=true -Dlog4j2.formatMsgNoLookups=true -Xms2g -Xmx4g"
 elif [[ "$HOSTNAME" =~ ^websocket- ]]
 then
-	PROFILE="-Dspring.profiles.active=dev -Djava.net.preferIPv4Stack=true -Dlog4j2.formatMsgNoLookups=true"
+	PROFILE="-Dspring.profiles.active=dev -Djava.net.preferIPv4Stack=true -Dlog4j2.formatMsgNoLookups=true -Xms2g -Xmx4g"
 fi
 
 echo "[PROFILE] $PROFILE"
