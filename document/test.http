@@ -1,0 +1,163 @@
+### 로컬
+
+
+
+### 회원 - 가입 (SNS 가입의 경우)
+POST http://localhost:8080/api/member/create
+Content-Type: application/json
+
+{
+  "id" : "",
+  "pw" : "",
+  "name" : "SNS가입자1",
+  "snsId" : "1234567890",
+  "snsType" : "test_kakao",
+  "phone" : "010-1234-5678"
+}
+
+
+
+### 회원 - 가입 (일반 가입의 경우)
+POST http://localhost:8080/api/member/create
+Content-Type: application/json
+
+{
+  "id" : "test1@test.com",
+  "pw" : "1234",
+  "name" : "",
+  "snsId" : "",
+  "snsType" : "",
+  "phone" : "010-1234-5555"
+}
+
+
+
+### 로그인
+POST localhost:8080/api/authenticate
+Content-Type: application/json
+
+{
+  "id" : "test1@test.com",
+  "pw" : "1234"
+}
+
+
+
+### 일정 - 등록
+POST http://localhost:8080/api/schedule/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0MUB0ZXN0LmNvbSIsImF1dGgiOiJST0xFX01FTUJFUiIsImV4cCI6MTY4OTMxMDM2Nn0.8X75FkQ84974dgaH37hEH1zywFdlkC-D9mrc9qxmZgjYpKl9nwO_7a1x9MQ5FcyF4I-iDiNR6hhTY9h0pJg8fQ
+
+{
+  "title" : "test제목",
+  "content" : "test할일",
+  "place" : "test장소",
+  "memo" : "test메모",
+  "link" : "test링크주소",
+  "notice" : 1,
+  "type" : 1,
+  "frequency" : 1,
+  "attendee" : "홍길동,김길동",
+  "status" : 1,
+  "startDate" : "2023-06-01 11:22:00",
+  "endDate" : "2023-06-12 23:18:00",
+  "latitude" : 12.123456789,
+  "longitude" : 123.123456789
+}
+
+
+
+### 일정 - 목록
+GET http://localhost:8080/api/schedule/lookup?pageNum=1&pageSize=10
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0MUB0ZXN0LmNvbSIsImF1dGgiOiJST0xFX01FTUJFUiIsImV4cCI6MTY4OTMxMDM2Nn0.8X75FkQ84974dgaH37hEH1zywFdlkC-D9mrc9qxmZgjYpKl9nwO_7a1x9MQ5FcyF4I-iDiNR6hhTY9h0pJg8fQ
+Content-Type: application/json
+
+
+
+### 일정 - 목록 - 오늘
+GET http://localhost:8080/api/schedule/lookup?pageNum=1&pageSize=10&searchToday=1
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0MUB0ZXN0LmNvbSIsImF1dGgiOiJST0xFX01FTUJFUiIsImV4cCI6MTY4OTMxMDM2Nn0.8X75FkQ84974dgaH37hEH1zywFdlkC-D9mrc9qxmZgjYpKl9nwO_7a1x9MQ5FcyF4I-iDiNR6hhTY9h0pJg8fQ
+Content-Type: application/json
+
+
+
+
+
+
+
+### 운영
+
+
+
+### 회원 - 가입 (SNS 가입의 경우)
+POST http://3.35.196.22:8080/api/member/create
+Content-Type: application/json
+
+{
+  "id" : "",
+  "pw" : "",
+  "name" : "SNS가입자1",
+  "snsId" : "1234567890",
+  "snsType" : "test_kakao",
+  "phone" : "010-1234-5678"
+}
+
+
+
+### 회원 - 가입 (일반 가입의 경우)
+POST http://3.35.196.22:8080/api/member/create
+Content-Type: application/json
+
+{
+  "id" : "test1@test.com",
+  "pw" : "1234",
+  "name" : "일반가입자1",
+  "snsId" : "",
+  "snsType" : "",
+  "phone" : "010-1234-5555"
+}
+
+
+
+### 로그인
+POST http://3.35.196.22:8080/api/authenticate
+Content-Type: application/json
+
+{
+  "id" : "test1@test.com",
+  "pw" : "1234"
+}
+
+
+
+### 일정 - 등록
+POST http://3.35.196.22:8080/api/schedule/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0MUB0ZXN0LmNvbSIsImF1dGgiOiJST0xFX01FTUJFUiIsImV4cCI6MTY4ODExOTk0N30.R6P_1YhDW5hhdiY79q-fr-UYhjuHYUW23vQeWh7WDYYwQ3fiNST5xDit0cRZbbOyP_k-ZkayILfxYwUzWCCeXQ
+
+{
+  "title" : "test제목",
+  "content" : "test할일",
+  "place" : "test장소",
+  "memo" : "test메모",
+  "link" : "test링크주소",
+  "notice" : 1,
+  "type" : 1,
+  "frequency" : 1,
+  "attendee" : "홍길동,김길동",
+  "status" : 1,
+  "startDate" : "2023-06-01 11:22:00",
+  "endDate" : "2023-06-12 23:18:00",
+  "latitude" : 12.123456789,
+  "longitude" : 123.123456789
+}
+
+
+### 일정 - 목록
+GET http://3.35.196.22:8080/api/schedule/lookup?pageNum=1&pageSize=10
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0MUB0ZXN0LmNvbSIsImF1dGgiOiJST0xFX01FTUJFUiIsImV4cCI6MTY4ODExOTk0N30.R6P_1YhDW5hhdiY79q-fr-UYhjuHYUW23vQeWh7WDYYwQ3fiNST5xDit0cRZbbOyP_k-ZkayILfxYwUzWCCeXQ
+
+
+
+
